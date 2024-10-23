@@ -1,0 +1,22 @@
+.clothing-card {
+    position: relative;
+  
+}
+
+.clothing-card__name {
+position:absolute;
+z-index: 1;
+background-color: #fff;
+margin-top: 15px;
+margin-bottom: 287px;
+margin-left: 125px;
+margin-right: 125px;
+}
+
+.clothing-card__image {
+height: 323px;
+width: 326px;
+border-radius: 24px;
+display: flex;
+
+}
