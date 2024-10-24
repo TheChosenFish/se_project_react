@@ -29,6 +29,11 @@
 }
 
 .cards__text {
+    line-height: 24.8px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 35px;
+    margin-top: 40px;
 
 }
 

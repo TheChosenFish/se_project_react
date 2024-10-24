@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     padding: 32px 0 28px;
-    font-family: "CabinetGrotesk";
+    font-family: "CabinetGroteskRegular";
 }
 
 .header__logo {
@@ -16,6 +16,8 @@
 .header__add-clothes {
     margin: 0 20px 0 auto;
     border: none;
+    font-weight: 700;
+    line-height: 24px;
 }
 
 .header__user-container {

@@ -7,7 +7,7 @@ function Header() {
     <header className="header">
       <img src={headlogo} alt="Logo Image" className="header__logo" />
       <p className="header__date-and-lo">DATE AND LOCATION</p>
-      <button className="header__add-clothes">+ ADD CLOTHES</button>
+      <button className="header__add-clothes">+ Add clothes</button>
       <div className="header__user-container">
         <p className="header__user-name">Terrence Tegegne</p>
         <img src={avatar} alt="Terrence Tegegne" className="header__avatar" />

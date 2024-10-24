@@ -1,6 +1,6 @@
 .page {
  background-color:#F3F3F3;
- font-family: "CabinetGrotesk";
+ font-family: "CabinetGroteskRegular";
  
 }
 
@@ -8,4 +8,6 @@
   max-width: 1360px;
   margin: 0 auto;
   padding: 0 20px;
+  
+
 }
