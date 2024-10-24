@@ -15,6 +15,7 @@
     position: absolute;
     top: 20px;
     left: 16px;
+    color: #fff;
 }
 
 .weather-card__image {
@@ -28,7 +29,7 @@
 }
 
 .cards__text {
-    
+
 }
 
 .cards__list {
