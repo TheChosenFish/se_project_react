@@ -27,6 +27,10 @@
     
 }
 
+.cards__text {
+    
+}
+
 .cards__list {
     display: flex;
     flex-direction: row;

@@ -1,7 +1,3 @@
-@font-face {
-    src: url("../assets/CabinetGrotesk.ttf") format(ttf);
-    font-family: "Cabinet Grotesk";
-}
 
 .header {
     display: flex;

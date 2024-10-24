@@ -1,4 +1,4 @@
-
 @font-face {
-    src: url(../assets/CabinetGrotesk.ttf);
+    font-family: "CabinetGrotesk";
+    src: url(../assets/CabinetGrotesk-Medium.woff) format(".woff");
 }
