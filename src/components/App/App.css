@@ -1,15 +1,13 @@
 .page {
- background-color:#F3F3F3;
- font-family: "CabinetGroteskRegular";
- max-width: 1440px;
- max-height: 822px;
- 
+  background-color: #f3f3f3;
+  font-family: "CabinetGroteskRegular";
+
 }
 
 .page__content {
   max-width: 1360px;
+  max-height: 822;
+  min-height: 822px;
   margin: 0 auto;
   padding: 0 20px;
-  
-
 }
