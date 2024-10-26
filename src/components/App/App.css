@@ -1,6 +1,8 @@
 .page {
  background-color:#F3F3F3;
  font-family: "CabinetGroteskRegular";
+ max-width: 1440px;
+ max-height: 822px;
  
 }
 
