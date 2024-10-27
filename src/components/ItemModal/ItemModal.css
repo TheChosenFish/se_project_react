@@ -19,7 +19,7 @@
   max-height: 80vh;
   object-fit: contain;
   position: relative;
-  border-radius: 16px;
+  border-radius: 16px 16px 0px 0px;
 }
 
 .modal__close-btn {
