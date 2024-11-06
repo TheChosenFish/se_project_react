@@ -1,0 +1,14 @@
+.profile {
+    display: flex;
+    flex-direction: row;
+    gap: 200px;
+
+}
+
+.profile__sidebar{
+    /* margin-right: auto; */
+}
+
+.profile__clothes-section{
+  
+}

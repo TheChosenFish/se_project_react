@@ -35,6 +35,13 @@ export const defaultClothingItems = [
     weather: "cold",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
   },
+  {
+    _id: 6,
+    name: "Hoodie",
+    weather: "warm",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Hoodie.png?etag=5f52451d0958ccb1016c78a45603a4e8",
+  }
+
 ];
 
 export const coordinates =  { latitude:33.9482689  , longitude:-84.1166741  };

@@ -10,7 +10,7 @@ function ItemCard({ item, onCardClick }) {
       <h2 className="clothing-card__name">{item.name}</h2>
       <img
         onClick={handleCardClick}
-        src={item.link}
+        src={item.imageUrl}
         alt={item.name}
         className="clothing-card__image"
       />

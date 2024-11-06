@@ -1,0 +1,17 @@
+.clothes-section__header {
+  display: flex;
+  margin-left: 40px;
+}
+
+.clothes-section__button {
+  border: none;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.6)
+}
+
+.clothes-section__list{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+}
