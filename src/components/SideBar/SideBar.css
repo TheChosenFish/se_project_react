@@ -4,5 +4,10 @@
 }
 
 .sidebar__username{
+    max-height: 25px;
+    margin: 0;
+}
+
+.sidebar__avatar{
     display: flex;
 }

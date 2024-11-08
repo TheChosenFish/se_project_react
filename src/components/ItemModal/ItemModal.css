@@ -36,6 +36,14 @@
   position: absolute;
   z-index: 2;
 }
+.modal__delete-btn{
+ border: none;
+ background: transparent;
+position: absolute;
+right: 30px;
+color: crimson;
+}
+
 
 .modal__content_type_image {
     max-width: 498px;

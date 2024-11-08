@@ -1,0 +1,55 @@
+.modal__caption {
+    font-size: 20px;
+    margin-bottom: 12px;
+    margin-left: 32px;
+  }
+  
+  .modal__weather {
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-bottom: 32px;
+    margin-left: 32px;
+  }
+  
+  .modal__image {
+    width: 100%;
+    min-width: 498px;
+    max-width: 80vw;
+    max-height: 80vh;
+    object-fit: contain;
+    position: relative;
+    border-radius: 16px 16px 0px 0px;
+  }
+  
+  .modal__close-btn {
+    height: 20px;
+    width: 20px;
+    background-image: url(../../assets/close-button.svg);
+    background-color: transparent;
+    top: 24px;
+    right: 24px;
+    border: none;
+    padding: 0px;
+    margin-bottom: auto;
+    margin-left: auto;
+    position: absolute;
+    z-index: 2;
+  }
+  .modal__delete-btn{
+   border: none;
+   background: transparent;
+  position: absolute;
+  right: 30px;
+  color: crimson;
+  }
+  
+  
+  .modal__content_type_image {
+      max-width: 498px;
+      max-height: 610px;
+      height: 100%;
+    width: 100%;
+    padding: 0px;
+  }
+  
