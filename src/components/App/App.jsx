@@ -52,14 +52,14 @@ function App() {
       .catch(console.error);
   }, []);
 
-  // useEffect(() => {
-  //   getItems()
-  //     .then((data) => {
-  //       console.log(data);
-  //       setClothingItems(getItems(data))
-  //     })
-  //     .catch(console.error);
-  // }, []);
+  useEffect(() => {
+    getItems()
+      .then((data) => {
+        console.log(data);
+        setClothingItems((data))
+      })
+      .catch(console.error);
+  }, []);
 
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
@@ -69,17 +69,28 @@ function App() {
   const addItem = (name, weather, imageUrl) => {
     postItem({ name, weather, imageUrl })
       .then((data) => {
-        setClothingItems((clothingItems) => {
-          data, clothingItems;
+        setClothingItems((prevItems) => {
+          [data,... prevItems];
         });
         closeActiveModal();
       })
       .catch(console.error);
   };
 
-  const deleteItem = (item) => {
-    if (activeModal === DeleteConfirmModal) handleDeleteCard;
+  const deleteItem = (name, weather, imageUrl) => {
+    removeItem({ name, weather, imageUrl })
+      .then((data) => {
+        setDeleteCard((prevItems) => {
+          [data,... prevItems];
+        });
+        closeActiveModal();
+      })
+      .catch(console.error);
   };
+
+  // const deleteItem = (item) => {
+  //   if (activeModal === DeleteConfirmModal) handleDeleteCard;
+  // };
 
   // function handleAddItemModalSubmit(){
   //   // console.log('handleAddItemModalSubmit has run!!!')
