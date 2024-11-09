@@ -1,10 +1,6 @@
 import "../ItemModal/ItemModal.css";
-import DeleteConfirmModal from "../DeleteConfirmModal/DeleteConfirmModal";
 
-function ItemModal({ onClose, card, handleDeleteCard, onSubmit }) {
-  const handleDelete = () => {
-    onDeleteClick();
-  };
+function ItemModal({ onClose, card, handleDeleteCard }) {
   return (
     <div className={`modal modal_opened`}>
       <div className="modal__content modal__content_type_image">
@@ -18,11 +14,11 @@ function ItemModal({ onClose, card, handleDeleteCard, onSubmit }) {
           <h2 className="modal__caption">
             {card.name}
             <button
-              onClick={handleDeleteCard}
               type="submit"
               className="modal__delete-btn"
+              onSubmit={handleDeleteCard}
             >
-             <DeleteConfirmModal/>
+              Delete
             </button>
           </h2>
 

@@ -5,7 +5,8 @@
 
 .sidebar__username{
     max-height: 25px;
-    margin: 0;
+    /* width: 100px */
+    margin-left: 16px;
 }
 
 .sidebar__avatar{

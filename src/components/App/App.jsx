@@ -3,7 +3,6 @@ import "./App.css";
 import { coordinates, APIkey } from "../../utils/constants";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import Footer from "../Footer/Footer";
@@ -57,7 +56,7 @@ function App() {
   //   getItems()
   //     .then((data) => {
   //       console.log(data);
-  //       setClothingItems(ge(data))
+  //       setClothingItems(getItems(data))
   //     })
   //     .catch(console.error);
   // }, []);
@@ -78,9 +77,10 @@ function App() {
       .catch(console.error);
   };
 
-  const poofItem = (items) => {
-    deleteItem(clothingItems);
+  const deleteItem = (item) => {
+    if (activeModal === DeleteConfirmModal) handleDeleteCard;
   };
+
   // function handleAddItemModalSubmit(){
   //   // console.log('handleAddItemModalSubmit has run!!!')
   //   return postItem().then(()=>{
@@ -88,7 +88,7 @@ function App() {
   //   }).catch(()=>{})
   // }
 
-  console.log(currentTemperatureUnit);
+  // console.log(currentTemperatureUnit);
 
   return (
     <div className="page">
@@ -114,21 +114,27 @@ function App() {
                 <Profile
                   onCardClick={handleCardClick}
                   clothingItems={clothingItems}
+                  onSubmit={addItem}
                 />
               }
             />
           </Routes>
         </div>
         {activeModal === "add-garment" && (
-          <AddItemModal onSubmit={postItem} onClose={closeActiveModal} />
+          <AddItemModal onSubmit={addItem} onClose={closeActiveModal} />
         )}
         {activeModal === "preview" && (
-          <ItemModal card={selectedCard} onClose={closeActiveModal} />
+          <ItemModal
+            card={selectedCard}
+            onClose={closeActiveModal}
+            handleDeleteCard={handleDeleteCard}
+          />
         )}
         {activeModal === "delete-card" && (
           <DeleteConfirmModal
-            onSubmit={handleDeleteCard}
             onClose={closeActiveModal}
+            onClick={handleDeleteCard}
+            onSubmit={deleteItem}
           />
         )}
         <Footer />

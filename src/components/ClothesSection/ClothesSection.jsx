@@ -4,7 +4,7 @@ import "./ClothesSection.css"
 
 function ClothesSection({ onCardClick }) {
   return (
-    <div className="clothes-section">
+    <div className="clothes__section">
       <div className="clothes-section__header">
         <p>Your Items</p>
         <button className="clothes-section__button">+ Add New </button>
