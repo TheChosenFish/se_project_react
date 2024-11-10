@@ -9,7 +9,7 @@ import Footer from "../Footer/Footer";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import { Routes, Route } from "react-router-dom";
 import Profile from "../Profile/Profile";
-import { getItems, postItem, deleteItem } from "../../utils/api";
+import { getItems, postItem, removeItem } from "../../utils/api";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import DeleteConfirmModal from "../DeleteConfirmModal/DeleteConfirmModal";
 function App() {
@@ -56,7 +56,7 @@ function App() {
     getItems()
       .then((data) => {
         console.log(data);
-        setClothingItems((data))
+        setClothingItems(data);
       })
       .catch(console.error);
   }, []);
@@ -67,22 +67,24 @@ function App() {
   };
 
   const addItem = (name, weather, imageUrl) => {
-    postItem({ name, weather, imageUrl })
+    postItem({ name, weather, imageUrl }) // not defined
+   
       .then((data) => {
         setClothingItems((prevItems) => {
-          [data,... prevItems];
+          [data, ...prevItems];
         });
         closeActiveModal();
       })
       .catch(console.error);
   };
 
-  const deleteItem = (name, weather, imageUrl) => {
-    removeItem({ name, weather, imageUrl })
+  const deleteItem = (_id) => {
+    removeItem(selectedCard._id)
       .then((data) => {
-        setDeleteCard((prevItems) => {
-          [data,... prevItems];
-        });
+        setClothingItems(clothingItems.filter((item) => {
+          return item._id !== selectedCard._id
+        }))
+        setSelectedCard({})
         closeActiveModal();
       })
       .catch(console.error);

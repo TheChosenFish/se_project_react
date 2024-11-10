@@ -9,6 +9,9 @@ import { useContext } from "react";
 function Main({ weatherData, handleCardClick, clothingItems }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
+  console.log('=====');
+  console.log(clothingItems)
+
   return (
     <main>
       <WeatherCard weatherData={weatherData} getWeatherType={getWeatherType} />
