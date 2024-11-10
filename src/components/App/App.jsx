@@ -23,7 +23,7 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
-  const [deleteCard, setDeleteCard] = useState("");
+  // const [deleteCard, setDeleteCard] = useState("");
   const handleCardClick = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);

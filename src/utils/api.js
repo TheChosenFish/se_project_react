@@ -8,12 +8,12 @@ export function getItems() {
   return fetch(`${baseUrl}/items`).then(checkResponse);
 }
 
-export function postItem({ data }) {
-  console.log(data)
+export function postItem({ name, weather, imageUrl }) {
+  console.log(name, weather, imageUrl)
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ data }),
+    body: JSON.stringify({ name, imageUrl, weather }),
   }).then(checkResponse);
 }
 
