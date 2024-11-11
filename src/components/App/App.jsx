@@ -62,17 +62,15 @@ function App() {
   }, []);
 
   const handleToggleSwitchChange = () => {
-    if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
+    if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
   };
 
-  const addItem = (name, weather, imageUrl) => {
+  const addItem = ({ name, weather, imageUrl }) => {
     postItem({ name, weather, imageUrl }) // not defined
-   
       .then((data) => {
-        setClothingItems((prevItems) => {
-          [data, ...prevItems];
-        });
+        debugger;
+        setClothingItems((prevItems) => [data, ...prevItems]);
         closeActiveModal();
       })
       .catch(console.error);
@@ -81,10 +79,12 @@ function App() {
   const deleteItem = (_id) => {
     removeItem(selectedCard._id)
       .then((data) => {
-        setClothingItems(clothingItems.filter((item) => {
-          return item._id !== selectedCard._id
-        }))
-        setSelectedCard({})
+        setClothingItems(
+          clothingItems.filter((item) => {
+            return item._id !== selectedCard._id;
+          })
+        );
+        setSelectedCard({});
         closeActiveModal();
       })
       .catch(console.error);
@@ -134,7 +134,7 @@ function App() {
           </Routes>
         </div>
         {activeModal === "add-garment" && (
-          <AddItemModal onSubmit={addItem} onClose={closeActiveModal} />
+          <AddItemModal addItem={addItem} onClose={closeActiveModal} />
         )}
         {activeModal === "preview" && (
           <ItemModal
