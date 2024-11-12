@@ -56,7 +56,7 @@ function App() {
     getItems()
       .then((data) => {
         console.log(data);
-        setClothingItems(data);
+        setClothingItems(data.reverse());
       })
       .catch(console.error);
   }, []);
@@ -69,7 +69,6 @@ function App() {
   const addItem = ({ name, weather, imageUrl }) => {
     postItem({ name, weather, imageUrl }) // not defined
       .then((data) => {
-        debugger;
         setClothingItems((prevItems) => [data, ...prevItems]);
         closeActiveModal();
       })
@@ -125,6 +124,7 @@ function App() {
               path="/Profile"
               element={
                 <Profile
+                  handleAddClick={handleAddClick}
                   onCardClick={handleCardClick}
                   clothingItems={clothingItems}
                   onSubmit={addItem}

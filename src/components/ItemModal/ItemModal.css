@@ -13,10 +13,8 @@
 }
 
 .modal__image {
-  width: 100%;
-  min-width: 498px;
-  max-width: 80vw;
-  max-height: 80vh;
+  width: 498px;
+  height: 498px;
   object-fit: contain;
   position: relative;
   border-radius: 16px 16px 0px 0px;
@@ -36,19 +34,18 @@
   position: absolute;
   z-index: 2;
 }
-.modal__delete-btn{
- border: none;
- background: transparent;
-position: absolute;
-right: 30px;
-color: crimson;
+.modal__delete-btn {
+  border: none;
+  background: transparent;
+  position: absolute;
+  right: 30px;
+  color: crimson;
 }
 
-
 .modal__content_type_image {
-    max-width: 498px;
-    max-height: 610px;
-    height: 100%;
+  max-width: 498px;
+  max-height: 610px;
+  height: 100%;
   width: 100%;
   padding: 0px;
 }
