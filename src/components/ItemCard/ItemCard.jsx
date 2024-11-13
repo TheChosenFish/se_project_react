@@ -5,7 +5,7 @@ function ItemCard({ item, onCardClick }) {
   const handleCardClick = () => {
     onCardClick(item);
   };
-  console.log(item)
+  console.log(item);
   return (
     <div className="clothing-card">
       <h2 className="clothing-card__name">{item.name}</h2>

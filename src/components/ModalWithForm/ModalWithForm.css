@@ -64,12 +64,11 @@
   flex-direction: column;
 }
 
-
 .modal__input {
   display: block;
   margin-top: 8px;
   border: none;
-  text-decoration-thickness: 1px ;
+  text-decoration-thickness: 1px;
   border-bottom: 1px solid #000;
   text-underline-offset: 4px;
   width: 100%;
@@ -117,4 +116,3 @@
   border-radius: 8px;
   color: #fff;
 }
-

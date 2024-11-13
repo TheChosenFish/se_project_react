@@ -1,45 +1,43 @@
-
 .header {
-    display: flex;
-    align-items: center;
-    padding: 32px 0 28px;
-    font-family: "CabinetGroteskRegular";
+  display: flex;
+  align-items: center;
+  padding: 32px 0 28px;
+  font-family: "CabinetGroteskRegular";
 }
 
-.header__container{
-    display: flex;
+.header__container {
+  display: flex;
 }
 
 .header__logo {
-    margin-right: 24px;
+  margin-right: 24px;
 }
 
-.header__date-and-lo{
-    margin: 0;
-    margin-right: auto;
-    margin-top: 10px;
+.header__date-and-lo {
+  margin: 0;
+  margin-right: auto;
+  margin-top: 10px;
 }
 .header__add-clothes {
-    margin: 0 20px 0 0;
-    border: none;
-    font-weight: 700;
-    line-height: 24px;
-    background-color: transparent;
+  margin: 0 20px 0 0;
+  border: none;
+  font-weight: 700;
+  line-height: 24px;
+  background-color: transparent;
 }
 
-.header__link{
-    text-decoration: none;
-    color: black;
+.header__link {
+  text-decoration: none;
+  color: black;
 }
 
 .header__user-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
 }
 
-
 .header__user-name {
-    margin: 0;
+  margin: 0;
 }

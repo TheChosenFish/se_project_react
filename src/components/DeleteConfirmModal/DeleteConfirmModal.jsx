@@ -1,6 +1,6 @@
 import "./DeleteConfirmModal.css";
 
-function DeleteConfirmModal({ card, onClose , onSubmit }) {
+function DeleteConfirmModal({ card, onClose, onSubmit }) {
   return (
     <div className={`modal modal_opened`}>
       <div className="modal__content delete-modal__content_type_image">
@@ -15,7 +15,7 @@ function DeleteConfirmModal({ card, onClose , onSubmit }) {
             irreversible.
             {card}
             <button
-            //   handleDeleteCard={handleDeleteCard}
+              //   handleDeleteCard={handleDeleteCard}
               onClick={onSubmit}
               type="submit"
               className="delete-modal__delete-btn"

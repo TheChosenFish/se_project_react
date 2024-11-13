@@ -1,14 +1,13 @@
-.sidebar{
-    display: flex;
-   
+.sidebar {
+  display: flex;
 }
 
-.sidebar__username{
-    max-height: 25px;
-    /* width: 100px */
-    margin-left: 16px;
+.sidebar__username {
+  max-height: 25px;
+  /* width: 100px */
+  margin-left: 16px;
 }
 
-.sidebar__avatar{
-    display: flex;
+.sidebar__avatar {
+  display: flex;
 }

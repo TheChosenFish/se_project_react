@@ -29,11 +29,11 @@
   z-index: 2;
 }
 
-.delete-modal__close-btn{
-    height: 20px;
+.delete-modal__close-btn {
+  height: 20px;
   width: 20px;
   background-image: url(../../assets/close-button.svg);
-  background-color: transparent;
+  background-color: grey;
   top: 24px;
   right: 24px;
   border: none;
@@ -52,16 +52,16 @@
   color: crimson;
 }
 
-.delete-modal__delete-btn{
-    margin-top: 40px;
-    border: none;
-    background-color: transparent;
+.delete-modal__delete-btn {
+  margin-top: 40px;
+  border: none;
+  background-color: transparent;
 }
 
 .delete-modal__cancel-btn {
-    margin-top: 16px;
-    border: none;
-    background-color: transparent;
+  margin-top: 16px;
+  border: none;
+  background-color: transparent;
   color: crimson;
 }
 

@@ -1,6 +1,6 @@
 const baseUrl = "http://localhost:3001";
 
-function checkResponse(res) {
+export function checkResponse(res) {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 }
 
@@ -9,7 +9,7 @@ export function getItems() {
 }
 
 export function postItem({ name, weather, imageUrl }) {
-  console.log(name, weather, imageUrl)
+  console.log(name, weather, imageUrl);
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },

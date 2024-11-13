@@ -1,6 +1,5 @@
-.clothes__section{
+.clothes__section {
   width: 1016px;
-  
 }
 
 .clothes-section__header {
@@ -11,13 +10,13 @@
 .clothes-section__button {
   border: none;
   background: transparent;
-  color: rgba(0, 0, 0, 0.6)
+  color: rgba(0, 0, 0, 0.6);
 }
 
-.clothes-section__list{
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    flex-direction: row;
-    padding: 0;
+.clothes-section__list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 0;
 }

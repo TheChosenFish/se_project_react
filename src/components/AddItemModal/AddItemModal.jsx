@@ -35,7 +35,7 @@ function AddItemModal({ addItem, onClose }) {
           className="modal__input"
           id="name"
           placeholder="Name"
-        onChange={handleChangeName}
+          onChange={handleChangeName}
           value={name}
         />
       </label>
@@ -47,7 +47,7 @@ function AddItemModal({ addItem, onClose }) {
           id="imageUrl"
           placeholder="Image URL"
           value={imageUrl}
-        onChange={handleChangeImageUrl}
+          onChange={handleChangeImageUrl}
         />
       </label>
       <fieldset className="modal__radio-buttons">
@@ -58,7 +58,7 @@ function AddItemModal({ addItem, onClose }) {
             type="radio"
             className="modal__radio-input"
             name="button"
-            value='hot'
+            value="hot"
             onChange={handleChangeWeather}
           />
           Hot
@@ -69,7 +69,7 @@ function AddItemModal({ addItem, onClose }) {
             type="radio"
             className="modal__radio-input"
             name="button"
-            value='cold'
+            value="cold"
             onChange={handleChangeWeather}
           />
           Cold
@@ -80,7 +80,7 @@ function AddItemModal({ addItem, onClose }) {
             type="radio"
             className="modal__radio-input"
             name="button"
-            value={'warm'}
+            value={"warm"}
             onChange={handleChangeWeather}
           />
           Warm

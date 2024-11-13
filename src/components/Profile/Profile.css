@@ -1,16 +1,12 @@
 .profile {
-    display: flex;
-    flex-direction: row;
-    gap: 116px;
-
+  display: flex;
+  flex-direction: row;
+  gap: 116px;
 }
 
-.profile__sidebar{
-
-    
+.profile__sidebar {
 }
 
-.profile__clothes-section{
+.profile__clothes-section {
   width: 1016px;
- 
 }

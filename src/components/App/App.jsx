@@ -34,7 +34,7 @@ function App() {
   };
 
   const closeActiveModal = () => {
-    setActiveModal(" ");
+    setActiveModal("");
   };
 
   const handleDeleteCard = () => {
@@ -44,7 +44,7 @@ function App() {
   useEffect(() => {
     getWeather(coordinates, APIkey)
       .then((data) => {
-        const filterData = filterWeatherData(data);
+       
         setWeatherData(filterWeatherData(data));
         // console.log(filterData)
       })

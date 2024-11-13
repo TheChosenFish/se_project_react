@@ -40,10 +40,9 @@ export const defaultClothingItems = [
     name: "Hoodie",
     weather: "warm",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Hoodie.png?etag=5f52451d0958ccb1016c78a45603a4e8",
-  }
-
+  },
 ];
 
-export const coordinates =  { latitude:33.9482689  , longitude:-84.1166741  };
+export const coordinates = { latitude: 33.9482689, longitude: -84.1166741 };
 
 export const APIkey = "8d36c984805859f5222af4f79333d620";
