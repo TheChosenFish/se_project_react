@@ -1,6 +1,17 @@
 import "../ItemModal/ItemModal.css";
 
-function ItemModal({ onClose, card, handleDeleteCard }) {
+function ItemModal({
+  onClose,
+  card,
+  handleDeleteCard,
+  itemDeleteButtonClassName,
+}) {
+  const isOwn = selectedCard.owner === currentUser._id;
+
+  const itemDeleteButtonClassName = `modal__delete-button ${
+    isOwn ? "" : "modal__delete-button_hidden"
+  }`;
+
   return (
     <div className={`modal modal_opened`}>
       <div className="modal__content modal__content_type_image">
@@ -13,13 +24,15 @@ function ItemModal({ onClose, card, handleDeleteCard }) {
         <div className="modal__footer">
           <h2 className="modal__caption">
             {card.name}
-            <button
-              type="submit"
-              className="modal__delete-btn"
-              onClick={handleDeleteCard}
-            >
-              Delete
-            </button>
+            {isOwn && (
+              <button
+                type="submit"
+                className="modal__delete-btn"
+                onClick={handleDeleteCard}
+              >
+                Delete
+              </button>
+            )}
           </h2>
 
           <p className="modal__weather">Weather: {card.weather}</p>

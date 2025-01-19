@@ -1,5 +1,13 @@
 .sidebar {
   display: flex;
+  flex-direction: column;
+}
+.sidebar__userinfo {
+  display: flex;
+}
+
+.sidebar__avatar {
+  display: flex;
 }
 
 .sidebar__username {
@@ -8,6 +16,17 @@
   margin-left: 16px;
 }
 
-.sidebar__avatar {
-  display: flex;
+
+.sidebar__edit-btn {
+  border: none;
+  margin-right: auto;
+  margin-top: 24px;
+ 
+}
+
+
+.sidebar__logout-btn {
+  border: none;
+  margin-right: auto;
+  margin-top: 8px;
 }

@@ -2,11 +2,23 @@ import SideBar from "../Sidebar/Sidebar";
 import ClothesSection from "../ClothesSection/ClothesSection";
 import "./Profile.css";
 
-function Profile({ onCardClick, clothingItems, addItem, handleAddClick }) {
+function Profile({
+  onCardClick,
+  clothingItems,
+  addItem,
+  handleAddClick,
+  onEdit,
+  closeActiveModal,
+  onLogout,
+}) {
   return (
     <div className="profile">
       <section className="profile__sidebar">
-        <SideBar />
+        <SideBar
+          onLogout={onLogout}
+          onEdit={onEdit}
+          onClose={closeActiveModal}
+        />
       </section>
       <section className="profile__clothes-section">
         <ClothesSection

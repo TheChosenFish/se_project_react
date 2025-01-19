@@ -5,6 +5,12 @@
   font-family: "CabinetGroteskRegular";
 }
 
+.header__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
 .header__container {
   display: flex;
 }

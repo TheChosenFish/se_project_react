@@ -3,8 +3,18 @@ import headlogo from "../../assets/Logo.svg";
 import avatar from "../../assets/avatar.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CurrentUserContext } from "../../contexts/CurrentTemperatureUnitContext";
 
-function Header({ handleAddClick, weatherData }) {
+function Header({
+  handleAddClick,
+  handleRegister,
+  handleLogin,
+  weatherData,
+  isLoggedIn,
+}) {
+  const currentUser = useContext(CurrentUserContext);
+
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
@@ -20,19 +30,45 @@ function Header({ handleAddClick, weatherData }) {
         </p>
       </div>
       <ToggleSwitch />
-      <button
-        onClick={handleAddClick}
-        type="button"
-        className="header__add-clothes"
-      >
-        + Add clothes
-      </button>
-      <Link to="/profile" className="header__link">
-        <div className="header__user-container">
-          <p className="header__user-name">Terrence Tegegne</p>
-          <img src={avatar} alt="Terrence Tegegne" className="header__avatar" />
-        </div>
-      </Link>
+      {!isLoggedIn && (
+        <>
+          <button
+            onClick={handleRegister}
+            type="button"
+            className="header__add-clothes"
+          >
+            Signup
+          </button>
+          <button
+            onClick={handleLogin}
+            type="button"
+            className="header__add-clothes"
+          >
+            Signin
+          </button>
+        </>
+      )}
+      {isLoggedIn && (
+        <>
+          <button
+            onClick={handleAddClick}
+            type="button"
+            className="header__add-clothes"
+          >
+            + Add clothes
+          </button>
+          <Link to="/profile" className="header__link">
+            <div className="header__user-container">
+              <p className="header__user-name">{currentUser.name}</p>
+              <img
+                src={currentUser.avatar}
+                alt="Terrence Tegegne"
+                className="header__avatar"
+              />
+            </div>
+          </Link>
+        </>
+      )}
     </header>
   );
 }

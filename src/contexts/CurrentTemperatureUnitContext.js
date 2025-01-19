@@ -5,4 +5,8 @@ const CurrentTemperatureUnitContext = React.createContext({
   handleToggleSwitchChange: () => {},
 });
 
-export { CurrentTemperatureUnitContext };
+const CurrentUserContext = React.createContext({
+  
+})
+
+export { CurrentTemperatureUnitContext, CurrentUserContext };
