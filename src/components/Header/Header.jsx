@@ -62,7 +62,7 @@ function Header({
               <p className="header__user-name">{currentUser.name}</p>
               <img
                 src={currentUser.avatar}
-                alt="Terrence Tegegne"
+                alt="User name"
                 className="header__avatar"
               />
             </div>

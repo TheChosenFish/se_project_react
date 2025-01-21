@@ -10,6 +10,8 @@ function Profile({
   onEdit,
   closeActiveModal,
   onLogout,
+  onCardLike,
+  isLoggedIn,
 }) {
   return (
     <div className="profile">
@@ -26,6 +28,8 @@ function Profile({
           onSubmit={addItem}
           clothingItems={clothingItems}
           handleAddClick={handleAddClick}
+          onCardLike={onCardLike}
+          isLoggedIn={isLoggedIn}
         />
       </section>
     </div>

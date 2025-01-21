@@ -12,7 +12,13 @@ import {
 } from "../../contexts/CurrentTemperatureUnitContext";
 import { Routes, Route } from "react-router-dom";
 import Profile from "../Profile/Profile";
-import { getItems, postItem, removeItem } from "../../utils/api";
+import {
+  getItems,
+  postItem,
+  removeItem,
+  addCardLike,
+  removeCardLike,
+} from "../../utils/api";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
@@ -32,6 +38,7 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
+  const [likedCard, setLikedCard] = useState("");
   const [currentUser, setCurrentUser] = useState({
     name: "",
     email: "",
@@ -47,6 +54,10 @@ function App() {
 
   const handleAddClick = () => {
     setActiveModal("add-garment");
+  };
+
+  const handleLike = () => {
+    setLikedCard("liked");
   };
 
   const handleLogin = () => {
@@ -151,9 +162,9 @@ function App() {
     // Check if this card is not currently liked
     !isLiked
       ? // if so, send a request to add the user's id to the card's likes array
-        api
-          // the first argument is the card's id
-          .addCardLike(id, token)
+
+        // the first argument is the card's id
+        addCardLike(id, token)
           .then((updatedCard) => {
             setClothingItems((cards) =>
               cards.map((item) => (item._id === id ? updatedCard : item))
@@ -161,9 +172,9 @@ function App() {
           })
           .catch((err) => console.log(err))
       : // if not, send a request to remove the user's id from the card's likes array
-        api
-          // the first argument is the card's id
-          .removeCardLike(id, token)
+
+        // the first argument is the card's id
+        removeCardLike(id, token)
           .then((updatedCard) => {
             setClothingItems((cards) =>
               cards.map((item) => (item._id === id ? updatedCard : item))
@@ -179,6 +190,7 @@ function App() {
         setCurrentUser(data);
         setIsLoggedIn(true);
       });
+
       //getCurrentUser
       // fetch to get the current user's information
       // setCurrentUser
@@ -209,6 +221,8 @@ function App() {
                     handleCardClick={handleCardClick}
                     clothingItems={clothingItems}
                     onCardLike={handleCardLike}
+                    isLoggedIn={isLoggedIn}
+                    likedCard={likedCard}
                   />
                 }
               />
@@ -223,6 +237,8 @@ function App() {
                       clothingItems={clothingItems}
                       onSubmit={addItem}
                       onLogout={handleLogoutClick}
+                      onCardLike={handleCardLike}
+                      isLoggedIn={isLoggedIn}
                     />
                   </ProtectedRoute>
                 }

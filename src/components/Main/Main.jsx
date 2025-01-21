@@ -6,7 +6,14 @@ import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperature
 import { useContext } from "react";
 // import { defaultClothingItems } from "../../utils/constants";
 
-function Main({ weatherData, handleCardClick, clothingItems }) {
+function Main({
+  weatherData,
+  handleCardClick,
+  clothingItems,
+  isLoggedIn,
+  onCardLike,
+  likedCard,
+}) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
   console.log("=====");
@@ -31,6 +38,9 @@ function Main({ weatherData, handleCardClick, clothingItems }) {
                   key={item._id}
                   item={item}
                   onCardClick={handleCardClick}
+                  isLoggedIn={isLoggedIn}
+                  onCardLike={onCardLike}
+                  likedCard={likedCard}
                 />
               );
             })}

@@ -1,6 +1,10 @@
 import "../ItemModal/ItemModal.css";
+import { useContext } from "react";
+import { CurrentUserContext } from "../../contexts/CurrentTemperatureUnitContext";
 
 function ItemModal({ onClose, card, handleDeleteCard }) {
+  const currentUser = useContext(CurrentUserContext);
+
   const isOwn = selectedCard.owner === currentUser._id;
 
   const itemDeleteButtonClassName = `modal__delete-button ${

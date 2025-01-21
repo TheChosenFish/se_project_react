@@ -3,29 +3,29 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "../ModalWithForm/ModalWithForm.css";
 
 function RegisterModal({ onClose, onRegister }) {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [name, setName] = useState ("");
-    const [imageUrl, setAvatar] = useState ("");
-  
-    const handleEmail = (e) => {
-      setEmail(e.target.value);
-    };
-    const handlePassword = (e) => {
-      setPassword(e.target.value);
-    };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [avatar, setAvatar] = useState("");
 
-    const handleName = (e) => {
-        setName(e.target.value)
-    };
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
 
-    const handleChangeImageUrl = (e) => {
-        setAvatar(e.target.value);
-    };
+  const handleName = (e) => {
+    setName(e.target.value);
+  };
 
-    const onSubmit = () => {
-      return onRegister({ email: email, password: password, name: name, imageUrl: imageUrl });
-    };
+  const handleChangeImageUrl = (e) => {
+    setAvatar(e.target.value);
+  };
+
+  const onSubmit = () => {
+    return onRegister({ email: email, password: password, name: name, avatar });
+  };
   return (
     <ModalWithForm
       buttonText="Register"
@@ -76,7 +76,7 @@ function RegisterModal({ onClose, onRegister }) {
           className="modal__input"
           id="imageUrl"
           placeholder="Avatar URL"
-          value={imageUrl}
+          value={avatar}
           onChange={handleChangeImageUrl}
           autoComplete="url"
         />
