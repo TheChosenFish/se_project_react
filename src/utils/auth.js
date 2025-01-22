@@ -14,11 +14,23 @@ export function login({ email, password }) {
   }).then(checkResponse);
 }
 
-export function signUp({ email, imageUrl, name, password }) {
+export function signUp({ email, avatar, name, password }) {
+  console.log(email, avatar, name, password);
   return fetch(`${baseUrl}/signup`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, avatar: imageUrl, name, password }),
+    body: JSON.stringify({ email, avatar, name, password }),
+  }).then(checkResponse);
+}
+
+export function updateUser({ name, avatar }) {
+  return fetch(`${baseUrl}/users/me`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${getToken()}`,
+    },
+    body: JSON.stringify({ avatar, name }),
   }).then(checkResponse);
 }
 

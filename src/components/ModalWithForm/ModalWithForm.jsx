@@ -7,6 +7,7 @@ function ModalWithForm({
   title,
   onClose,
   onSubmit,
+  onClick,
 }) {
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +25,11 @@ function ModalWithForm({
             <button type="submit" className="modal__submit-btn">
               {buttonText}
             </button>
-            <button type="submit" className="modal__submit-btn2">
+            <button
+              onClick={onClick}
+              type="button"
+              className="modal__submit-btn2"
+            >
               {secondButtonText}
             </button>
           </div>

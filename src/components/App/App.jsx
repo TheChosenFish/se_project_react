@@ -25,7 +25,13 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
 import DeleteConfirmModal from "../DeleteConfirmModal/DeleteConfirmModal";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-import { getCurrentUser, signUp, login, getToken } from "../../utils/auth";
+import {
+  getCurrentUser,
+  signUp,
+  login,
+  getToken,
+  updateUser,
+} from "../../utils/auth";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -51,6 +57,9 @@ function App() {
     setActiveModal("preview");
     setSelectedCard(card);
   };
+
+  console.log("=========================");
+  console.log(currentUser);
 
   const handleAddClick = () => {
     setActiveModal("add-garment");
@@ -113,6 +122,16 @@ function App() {
       .catch(console.error);
   };
 
+  const handleEditProfile = ({ name, avatar }) => {
+    return updateUser({ name, avatar })
+      .then((data) => {
+        console.log(data);
+        setCurrentUser(data);
+        closeActiveModal();
+      })
+      .catch(console.error);
+  };
+
   const deleteItem = (_id) => {
     removeItem(selectedCard._id)
       .then(() => {
@@ -127,8 +146,8 @@ function App() {
       .catch(console.error);
   };
 
-  const handleRegisterModalSubmit = ({ email, password, name, imageUrl }) => {
-    return signUp({ email, password, name, imageUrl })
+  const handleRegisterModalSubmit = ({ email, password, name, avatar }) => {
+    return signUp({ email, password, name, avatar })
       .then((data) => {
         handleLoginModalSubmit(email, password);
       })
@@ -265,17 +284,23 @@ function App() {
           {activeModal === "Login" && (
             <LoginModal
               onLogin={handleLoginModalSubmit}
+              handleRegister={handleRegister}
               onClose={closeActiveModal}
             />
           )}
           {activeModal === "Register" && (
             <RegisterModal
               onRegister={handleRegisterModalSubmit}
+              handleLogin={handleLogin}
               onClose={closeActiveModal}
             />
           )}
           {activeModal === "Edit" && (
-            <EditProfileModal onClose={closeActiveModal} />
+            <EditProfileModal
+              onClose={closeActiveModal}
+              onEdit={handleEditProfile}
+              currentUser={currentUser}
+            />
           )}
           <Footer />
         </CurrentTemperatureUnitContext.Provider>

@@ -2,9 +2,9 @@ import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "../ModalWithForm/ModalWithForm.css";
 
-function EditProfileModal({ onClose, onEdit }) {
-  const [name, setName] = useState("");
-  const [avatar, setAvatar] = useState("");
+function EditProfileModal({ onClose, onEdit, currentUser }) {
+  const [name, setName] = useState(currentUser.name);
+  const [avatar, setAvatar] = useState(currentUser.avatar);
 
   const handleName = (e) => {
     setName(e.target.value);
@@ -16,10 +16,8 @@ function EditProfileModal({ onClose, onEdit }) {
 
   const onSubmit = () => {
     return onEdit({
-      email: email,
-      password: password,
       name: name,
-      imageUrl: avatar,
+      avatar: avatar,
     });
   };
   return (

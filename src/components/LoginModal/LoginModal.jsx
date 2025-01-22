@@ -2,7 +2,7 @@ import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "../ModalWithForm/ModalWithForm.css";
 
-function LoginModal({ onClose, onLogin, onRegister }) {
+function LoginModal({ onClose, onLogin, handleRegister }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -23,6 +23,7 @@ function LoginModal({ onClose, onLogin, onRegister }) {
       title="Login"
       onClose={onClose}
       onSubmit={onSubmit}
+      onClick={handleRegister}
     >
       <label htmlFor="name" className="modal__label">
         Name{" "}

@@ -5,7 +5,12 @@ export function checkResponse(res) {
 }
 
 export function getItems() {
-  return fetch(`${baseUrl}/items`).then(checkResponse);
+  return fetch(`${baseUrl}/items`, {
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${getToken()}`,
+    },
+  }).then(checkResponse);
 }
 
 export function addCardLike(itemId) {
@@ -40,8 +45,12 @@ export function postItem({ name, weather, imageUrl }) {
   }).then(checkResponse);
 }
 
-export function removeItem(id) {
-  return fetch(`${baseUrl}/items/${id}`, {
+export function removeItem(_id) {
+  return fetch(`${baseUrl}/items/${_id}`, {
     method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${getToken()}`,
+    },
   }).then(checkResponse);
 }
