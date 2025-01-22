@@ -5,8 +5,12 @@ const CurrentTemperatureUnitContext = React.createContext({
   handleToggleSwitchChange: () => {},
 });
 
-const CurrentUserContext = React.createContext({
-  
-})
+const CurrentUserContext = React.createContext({});
 
-export { CurrentTemperatureUnitContext, CurrentUserContext };
+const SelectedCardContext = React.createContext({});
+
+export {
+  CurrentTemperatureUnitContext,
+  CurrentUserContext,
+  SelectedCardContext,
+};

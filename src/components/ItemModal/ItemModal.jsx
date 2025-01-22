@@ -2,7 +2,7 @@ import "../ItemModal/ItemModal.css";
 import { useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentTemperatureUnitContext";
 
-function ItemModal({ onClose, card, handleDeleteCard }) {
+function ItemModal({ onClose, handleDeleteCard, selectedCard }) {
   const currentUser = useContext(CurrentUserContext);
 
   const isOwn = selectedCard.owner === currentUser._id;
@@ -19,10 +19,14 @@ function ItemModal({ onClose, card, handleDeleteCard }) {
           type="button"
           className="modal__close-btn"
         ></button>
-        <img src={card.imageUrl} alt={card.name} className="modal__image" />
+        <img
+          src={selectedCard.imageUrl}
+          alt={selectedCard.name}
+          className="modal__image"
+        />
         <div className="modal__footer">
           <h2 className="modal__caption">
-            {card.name}
+            {selectedCard.name}
             {isOwn && (
               <button
                 type="submit"
@@ -34,7 +38,7 @@ function ItemModal({ onClose, card, handleDeleteCard }) {
             )}
           </h2>
 
-          <p className="modal__weather">Weather: {card.weather}</p>
+          <p className="modal__weather">Weather: {selectedCard.weather}</p>
         </div>
       </div>
     </div>

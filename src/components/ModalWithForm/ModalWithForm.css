@@ -89,8 +89,11 @@
   color: #000;
 }
 
-.modal__submit-btn {
+.modal_submit-btns {
   display: flex;
+}
+
+.modal__submit-btn {
   justify-content: center;
   align-items: center;
   width: 124px;
@@ -100,6 +103,18 @@
   border: none;
   border-radius: 8px;
   color: #fff;
+}
+
+.modal__submit-btn2 {
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  margin-top: 42px;
+  margin-left: 2px;
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .modal__submit-btn:hover {

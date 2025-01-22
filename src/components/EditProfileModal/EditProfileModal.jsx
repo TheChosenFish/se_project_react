@@ -2,12 +2,9 @@ import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "../ModalWithForm/ModalWithForm.css";
 
-function EditProfileModal({ onClose }) {
-
+function EditProfileModal({ onClose, onEdit }) {
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
-
- 
 
   const handleName = (e) => {
     setName(e.target.value);

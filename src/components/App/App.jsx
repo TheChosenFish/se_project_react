@@ -250,7 +250,7 @@ function App() {
           )}
           {activeModal === "preview" && (
             <ItemModal
-              card={selectedCard}
+              selectedCard={selectedCard}
               onClose={closeActiveModal}
               handleDeleteCard={handleDeleteCard}
             />

@@ -2,7 +2,7 @@ import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "../ModalWithForm/ModalWithForm.css";
 
-function RegisterModal({ onClose, onRegister }) {
+function RegisterModal({ onClose, onRegister, onLogin, handleLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -29,6 +29,7 @@ function RegisterModal({ onClose, onRegister }) {
   return (
     <ModalWithForm
       buttonText="Register"
+      secondButtonText="or Login"
       title="Register"
       onClose={onClose}
       onSubmit={onSubmit}

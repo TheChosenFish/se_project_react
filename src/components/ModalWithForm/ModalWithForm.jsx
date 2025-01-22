@@ -1,6 +1,13 @@
 import "../ModalWithForm/ModalWithForm.css";
 
-function ModalWithForm({ children, buttonText, title, onClose, onSubmit }) {
+function ModalWithForm({
+  children,
+  buttonText,
+  secondButtonText,
+  title,
+  onClose,
+  onSubmit,
+}) {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     onSubmit();
@@ -13,9 +20,14 @@ function ModalWithForm({ children, buttonText, title, onClose, onSubmit }) {
         <button onClick={onClose} type="button" className="modal__close" />
         <form className="modal__form" onSubmit={handleFormSubmit}>
           {children}
-          <button type="submit" className="modal__submit-btn">
-            {buttonText}
-          </button>
+          <div className="modal_submit-btns">
+            <button type="submit" className="modal__submit-btn">
+              {buttonText}
+            </button>
+            <button type="submit" className="modal__submit-btn2">
+              {secondButtonText}
+            </button>
+          </div>
         </form>
       </div>
     </div>
