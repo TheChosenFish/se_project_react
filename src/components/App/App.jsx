@@ -157,12 +157,14 @@ function App() {
   };
 
   const handleLoginModalSubmit = (email, password) => {
-    return login({ email, password }).then((data) => {
-      localStorage.setItem("jwt", data.token);
-      setCurrentUser(data.user);
-      setIsLoggedIn(true);
-      closeActiveModal();
-    });
+    return login({ email, password })
+      .then((data) => {
+        localStorage.setItem("jwt", data.token);
+        setCurrentUser(data.user);
+        setIsLoggedIn(true);
+        closeActiveModal();
+      })
+      .catch(console.error);
   };
 
   const handleLogoutClick = () => {
@@ -172,7 +174,7 @@ function App() {
       email: "",
       avatar: "",
       _id: "",
-    });
+    }).catch(console.error);
     localStorage.removeItem("jwt");
   };
 
@@ -299,7 +301,6 @@ function App() {
             <EditProfileModal
               onClose={closeActiveModal}
               onEdit={handleEditProfile}
-              currentUser={currentUser}
             />
           )}
           <Footer />
