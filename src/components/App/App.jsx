@@ -58,9 +58,6 @@ function App() {
     setSelectedCard(card);
   };
 
-  console.log("=========================");
-  console.log(currentUser);
-
   const handleAddClick = () => {
     setActiveModal("add-garment");
   };
@@ -174,7 +171,7 @@ function App() {
       email: "",
       avatar: "",
       _id: "",
-    }).catch(console.error);
+    });
     localStorage.removeItem("jwt");
   };
 
@@ -207,10 +204,12 @@ function App() {
   useEffect(() => {
     const token = getToken();
     if (token) {
-      getCurrentUser().then((data) => {
-        setCurrentUser(data);
-        setIsLoggedIn(true);
-      });
+      getCurrentUser()
+        .then((data) => {
+          setCurrentUser(data);
+          setIsLoggedIn(true);
+        })
+        .catch(console.error);
 
       //getCurrentUser
       // fetch to get the current user's information

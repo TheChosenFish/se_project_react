@@ -11,7 +11,9 @@ export function login({ email, password }) {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
-  }).then(checkResponse);
+  })
+    .catch(console.error)
+    .then(checkResponse);
 }
 
 export function signUp({ email, avatar, name, password }) {
@@ -20,7 +22,9 @@ export function signUp({ email, avatar, name, password }) {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, avatar, name, password }),
-  }).then(checkResponse);
+  })
+    .catch(console.error)
+    .then(checkResponse);
 }
 
 export function updateUser({ name, avatar }) {
@@ -31,7 +35,9 @@ export function updateUser({ name, avatar }) {
       authorization: `Bearer ${getToken()}`,
     },
     body: JSON.stringify({ avatar, name }),
-  }).then(checkResponse);
+  })
+    .catch(console.error)
+    .then(checkResponse);
 }
 
 export function getCurrentUser() {
@@ -41,5 +47,7 @@ export function getCurrentUser() {
       "Content-Type": "application/json",
       authorization: `Bearer ${getToken()}`,
     },
-  }).then(checkResponse);
+  })
+    .catch(console.error)
+    .then(checkResponse);
 }

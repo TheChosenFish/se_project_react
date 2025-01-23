@@ -33,6 +33,7 @@
 .clothing-card__like-button {
   background-image: url(/src/assets/Like\ button.svg);
   background-repeat: no-repeat;
+  background-color: transparent;
   width: 25px;
   height: 21px;
   border: none;
@@ -44,4 +45,5 @@
 
 .clothing-card__like-button_active {
   background-image: url(/src/assets/liked.svg);
+  background-color: transparent;
 }
