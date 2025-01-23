@@ -41,7 +41,7 @@ function EditProfileModal({ onClose, onEdit }) {
           value={name}
         />
       </label>
-      <label htmlFor="Name" className="modal__label">
+      <label className="modal__label">
         Avatar{" "}
         <input
           type="url"
