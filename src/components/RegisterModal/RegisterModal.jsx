@@ -41,12 +41,12 @@ function RegisterModal({ onClose, onRegister, handleLogin }) {
       onSubmit={onSubmit}
       onClick={handleLogin}
     >
-      <label htmlFor="name" className="modal__label">
+      <label htmlFor="email" className="modal__label">
         Email{" "}
         <input
           type="email"
           className="modal__input"
-          id="name"
+          id="email"
           placeholder="email"
           onChange={handleEmail}
           value={email}
@@ -82,7 +82,7 @@ function RegisterModal({ onClose, onRegister, handleLogin }) {
         <input
           type="url"
           className="modal__input"
-          id="imageUrl"
+          id="AvatarUrl"
           placeholder="Avatar URL"
           value={avatar}
           onChange={handleChangeImageUrl}
