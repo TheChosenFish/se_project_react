@@ -41,7 +41,7 @@ function LoginModal({ onClose, onLogin, handleRegister }) {
         <input
           type="password"
           className="modal__input"
-          id="password"
+          id="imageUrl"
           placeholder="password"
           value={password}
           onChange={handlePassword}
