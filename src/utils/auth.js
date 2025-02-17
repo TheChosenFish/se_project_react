@@ -1,6 +1,9 @@
 import { checkResponse } from "./api";
 
-export const baseUrl = "http://localhost:3001";
+export const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.oogabooga.net.jumpingcrab.com"
+    : "http://localhost:3001";
 
 export function getToken() {
   return localStorage.getItem("jwt");
