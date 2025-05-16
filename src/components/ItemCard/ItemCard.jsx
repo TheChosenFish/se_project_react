@@ -2,7 +2,7 @@ import { CurrentUserContext } from "../../contexts/CurrentTemperatureUnitContext
 import "./ItemCard.css";
 import React, { useContext } from "react";
 
-function ItemCard({ item, onCardClick, isLoggedIn, onCardLike, likedCard }) {
+function ItemCard({ item, onCardClick, isLoggedIn, onCardLike }) {
   const currentUser = useContext(CurrentUserContext);
   const handleCardClick = () => {
     onCardClick(item);

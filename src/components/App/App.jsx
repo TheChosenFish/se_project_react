@@ -210,11 +210,6 @@ function App() {
           setIsLoggedIn(true);
         })
         .catch(console.error);
-
-      //getCurrentUser
-      // fetch to get the current user's information
-      // setCurrentUser
-      // setIsLoggedIn(true)
     }
   }, []);
 

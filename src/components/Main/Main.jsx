@@ -16,9 +16,6 @@ function Main({
 }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
-  console.log("=====");
-  console.log(clothingItems);
-
   return (
     <main>
       <WeatherCard weatherData={weatherData} getWeatherType={getWeatherType} />
