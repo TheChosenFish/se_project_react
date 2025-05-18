@@ -33,5 +33,5 @@ For this app to function properly a system of form validation was used to verify
 
 ## Deployment
 
-[Click me](oogabooga.net.jumpingcrab.com)
+[Click me](https://oogabooga.net.jumpingcrab.com/)
 [Demo Video]()
